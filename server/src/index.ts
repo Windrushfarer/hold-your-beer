@@ -1,29 +1,26 @@
 import dotenv from 'dotenv'
-import { PrismaClient } from '@prisma/client'
+import fastify from 'fastify'
 
 dotenv.config()
 
-const prisma = new PrismaClient()
+const server = fastify()
 
-async function main() {
-  const beer = await prisma.beer.findFirst({
-    where: {
-      name: {
-        contains: 'Pub',
-      },
-    },
-    include: {
-      brewery: true,
-    }
-  })
+server.get('/ping', async () => {
+  return { pong: true }
+})
 
-  console.log(beer)
+async function start() {
+  try {
+    await server.listen(3000)
+
+    const address = server.server.address()
+    const port = typeof address === 'string' ? address : address?.port
+
+    console.log(`Server listening on ${port}`)
+  } catch (err) {
+    server.log.error(err)
+    process.exit(1)
+  }
 }
 
-main()
-  .catch((e) => {
-    throw e
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
-  })
+start()
