@@ -1,0 +1,25 @@
+{
+  "name": "beer-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "seed": "prisma db seed",
+    "migrate": "prisma migrate dev"
+  },
+  "keywords": [],
+  "author": "Windrushfarer",
+  "license": "ISC",
+  "devDependencies": {
+    "prisma": "3.6.0",
+    "ts-node": "10.4.0"
+  },
+  "dependencies": {
+    "@prisma/client": "3.6.0"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  }
+}
