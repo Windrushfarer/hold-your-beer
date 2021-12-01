@@ -1,13 +1,23 @@
+import dotenv from 'dotenv'
 import { PrismaClient } from '@prisma/client'
+
+dotenv.config()
 
 const prisma = new PrismaClient()
 
 async function main() {
-  const post = await prisma.post.update({
-    where: { id: 1 },
-    data: { published: true },
+  const beer = await prisma.beer.findFirst({
+    where: {
+      name: {
+        contains: 'Pub',
+      },
+    },
+    include: {
+      brewery: true,
+    }
   })
-  console.log(post)
+
+  console.log(beer)
 }
 
 main()
