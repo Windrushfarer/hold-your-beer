@@ -1,11 +1,11 @@
 {
-  "name": "hold-my-beer",
+  "name": "hold-your-beer",
   "version": "1.0.0",
   "description": "",
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start:server": "yarn workspace beer-server run start"
+    "server:dev": "yarn workspace beer-server run dev"
   },
   "keywords": [],
   "author": "Windrushfarer",

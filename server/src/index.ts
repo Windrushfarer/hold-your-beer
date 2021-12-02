@@ -1,13 +1,20 @@
 import dotenv from 'dotenv'
 import fastify from 'fastify'
+import { PrismaClient } from '@prisma/client'
+import { beersRoutes } from './routes'
 
 dotenv.config()
 
 const server = fastify()
+const prisma = new PrismaClient()
+
+server.decorateRequest('prisma', prisma)
 
 server.get('/ping', async () => {
   return { pong: true }
 })
+
+server.register(beersRoutes, { prefix: '/api' })
 
 async function start() {
   try {
@@ -24,3 +31,7 @@ async function start() {
 }
 
 start()
+  .finally(async () => {
+    await prisma.$disconnect()
+  })
+

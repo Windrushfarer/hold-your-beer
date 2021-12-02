@@ -5,6 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "dev": "nodemon",
     "start": "ts-node src/index.ts",
     "seed": "prisma db seed",
     "migrate": "prisma migrate dev"
@@ -14,12 +15,14 @@
   "license": "ISC",
   "devDependencies": {
     "dotenv": "10.0.0",
+    "nodemon": "^2.0.15",
     "prisma": "3.6.0",
     "ts-node": "10.4.0"
   },
   "dependencies": {
     "@prisma/client": "3.6.0",
-    "fastify": "^3.24.1"
+    "fastify": "^3.24.1",
+    "fastify-plugin": "^3.0.0"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
