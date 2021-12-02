@@ -5,7 +5,7 @@
     ],
     "module": "commonjs",
     "target": "es2020",
-    "allowJs": false,
+    "allowJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "incremental": true,
@@ -14,11 +14,6 @@
     "sourceMap": true,
     "outDir": "build",
     "baseUrl": "src"
-  },
-  "paths": {
-    "@types/*": [
-      "src/types/*"
-    ]
   },
   "include": [
     "src/**/*"

@@ -19,7 +19,7 @@ server.register(breweriesRoutes, { prefix: '/api' })
 
 async function start() {
   try {
-    await server.listen(3000)
+    await server.listen(process.env.PORT || 3000)
 
     const address = server.server.address()
     const port = typeof address === 'string' ? address : address?.port
