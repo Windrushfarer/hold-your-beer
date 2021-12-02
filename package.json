@@ -5,13 +5,14 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "server:dev": "yarn workspace beer-server run dev"
+    "dev": "concurrently \"yarn workspace beer-server run dev\" \"yarn workspace beer-client run dev\""
   },
   "keywords": [],
   "author": "Windrushfarer",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "16.11.11",
+    "concurrently": "^6.4.0",
     "typescript": "4.5.2"
   },
   "workspaces": [
