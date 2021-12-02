@@ -1,0 +1,25 @@
+.wrapper {
+  position: relative
+}
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0 4px;
+  width: 100%;
+}
+
+.body {
+  background-color: #fff;
+}
+
+.controls {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.results {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}

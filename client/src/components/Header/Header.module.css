@@ -1,0 +1,22 @@
+.header {
+  padding: 35px 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 900;
+}
+
+.first {
+  font-size: 28px;
+}
+
+.second {
+  font-size: 60px;
+  line-height: 40px;
+  letter-spacing: 5px;
+}
+
+.icons {
+  font-size: 44px;
+}
+

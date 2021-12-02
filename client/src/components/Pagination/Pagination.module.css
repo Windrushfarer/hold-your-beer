@@ -1,0 +1,40 @@
+.pagination {
+  display: flex;
+}
+
+.button {
+  font-size: 16px;
+  height: 40px;
+  width: 120px;
+  background: #FFFFFF;
+  border: 1px solid #DCDFF1;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:disabled {
+  color: #8b8b8b;
+  background: #d3d3d3;
+  border-color: #d3d3d3;
+}
+
+.button:not(:disabled):hover {
+  background: #ebebeb;
+  box-shadow: 0px 8px 15px -5px rgb(117, 132, 188, 0.8);
+}
+
+.button + .button {
+  margin-left: 10px;
+}
+
+.nextIcon {
+  margin-left: 8px;
+}
+
+.prevIcon {
+  margin-right: 8px;
+}

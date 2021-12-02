@@ -1,5 +1,6 @@
 import dotenv from 'dotenv'
 import fastify from 'fastify'
+import fastifyCors from 'fastify-cors'
 import { PrismaClient } from '@prisma/client'
 import { beersRoutes, breweriesRoutes } from './routes'
 
@@ -10,8 +11,9 @@ const prisma = new PrismaClient()
 
 server.decorateRequest('prisma', prisma)
 
-server.get('/ping', async () => {
-  return { pong: true }
+
+server.register(fastifyCors, {
+  origin: '*'
 })
 
 server.register(beersRoutes, { prefix: '/api' })

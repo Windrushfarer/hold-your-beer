@@ -11,14 +11,18 @@ export const getBeers: RouteHandler = async (request: AppRequest, reply) => {
   page = Math.max(Number(page), 1)
   rows = Math.max(Number(rows), 20)
 
+  const skip = (page - 1) * rows
+
   const items = await request.prisma.beer.findMany({
-    skip: (page - 1) * rows,
+    skip,
     take: rows,
   })
   const count = await request.prisma.beer.count()
+  const left = Math.max(count - (skip + rows), 0)
 
   reply.send({
     items,
-    count
+    count,
+    left
   })
 }

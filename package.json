@@ -5,7 +5,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"yarn workspace beer-server run dev\" \"yarn workspace beer-client run dev\""
+    "dev": "concurrently \"yarn workspace beer-server run dev\" \"yarn workspace beer-client run dev\"",
+    "component:new": "yarn workspace beer-client run component:new"
   },
   "keywords": [],
   "author": "Windrushfarer",
