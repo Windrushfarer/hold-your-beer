@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 import fastify from 'fastify'
 import { PrismaClient } from '@prisma/client'
-import { beersRoutes } from './routes'
+import { beersRoutes, breweriesRoutes } from './routes'
 
 dotenv.config()
 
@@ -15,6 +15,7 @@ server.get('/ping', async () => {
 })
 
 server.register(beersRoutes, { prefix: '/api' })
+server.register(breweriesRoutes, { prefix: '/api' })
 
 async function start() {
   try {
