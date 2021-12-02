@@ -13,3 +13,5 @@ export type Beer = {
   ounces: number
   breweryId: number | null
 }
+
+export type View = 'beers' | 'breweries'

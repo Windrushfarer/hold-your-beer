@@ -1,5 +1,6 @@
 import {
   UseSortByColumnProps,
+  UseFiltersColumnProps,
   UseSortByOptions,
 } from 'react-table'
 

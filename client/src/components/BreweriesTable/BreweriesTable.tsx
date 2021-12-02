@@ -1,14 +1,14 @@
 import { FC, useState, useMemo } from 'react'
 import { useQuery } from 'react-query'
 import { Column } from 'react-table'
-import { Beer } from '../../shared/types/domain'
+import { Brewery } from '../../shared/types/domain'
 import { api } from '../../api'
 import { Table } from '../Table'
 
-export const BeersTable: FC = () => {
+export const BreweriesTable: FC = () => {
   const [page, setPage] = useState(1)
-  const { data, isLoading } = useQuery(['beers', page], () => {
-    return api.fetchBeers({
+  const { data, isLoading } = useQuery(['breweries', page], () => {
+    return api.fetchBreweries({
       page,
       rows: 20
     })
@@ -16,29 +16,25 @@ export const BeersTable: FC = () => {
     keepPreviousData: true
   })
 
-  const columns: Column<Beer>[] = useMemo(() => [
+  const columns: Column<Brewery>[] = useMemo(() => [
     {
       Header: 'Name',
       accessor: 'name',
     },
     {
-      Header: 'Abv',
-      accessor: 'abv',
+      Header: 'City',
+      accessor: 'city',
     },
     {
-      Header: 'Size',
-      accessor: 'ounces',
-    },
-    {
-      Header: 'Type',
-      accessor: 'style',
-      disableSortBy: true,
-    },
+      Header: 'State',
+      accessor: 'state',
+      disableSortBy: true
+    }
   ], [])
   const tableData = useMemo(() => data ? data.items : [], [data])
 
   return (
-    <Table<Beer>
+    <Table<Brewery>
       columns={columns}
       items={tableData}
       isLoading={isLoading}

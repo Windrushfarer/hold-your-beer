@@ -1,3 +1,29 @@
+.wrapper {
+  position: relative
+}
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0 4px;
+  width: 100%;
+}
+
+.body {
+  background-color: #fff;
+}
+
+.controls {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.results {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
 .heading {
   padding: 16px;
   text-transform: uppercase;
@@ -17,6 +43,12 @@
 .heading:last-child {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.headingContent {
+  display: flex;
+  align-items: center;
+  user-select: none;
 }
 
 .row {
@@ -40,12 +72,10 @@
 }
 
 .direction {
-  visibility: hidden;
-}
-
-
-.visible {
-  visibility: visible;
+  margin-left: 5px;
+  display: inline-flex;
+  flex-direction: column;
+  align-self: center;
 }
 
 .cell:first-child {
@@ -56,4 +86,20 @@
 .cell:last-child {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.asc,
+.desc {
+  opacity: 0.6;
+  height: 6px;
+}
+
+.asc {
+  margin-bottom: 2px;
+}
+
+.active {
+  opacity: 1;
+  height: 12px;
+  color: #3457DC;
 }

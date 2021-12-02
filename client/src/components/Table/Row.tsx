@@ -1,13 +1,12 @@
 import { FC, ReactNode } from 'react'
 import { TableRowProps, Cell } from 'react-table'
-import { Beer } from '../../shared/types/domain'
 import styles from './Table.module.css'
 
-type Props = TableRowProps & {
-  cells: Cell<Beer>[]
+type Props<T extends object> = TableRowProps & {
+  cells: Cell<T>[]
 }
 
-export const TableRow: FC<Props> = ({ cells, ...props }) => {
+export function TableRow<T extends object>({ cells, ...props }: Props<T>) {
   return (
     <tr {...props} className={styles.row}>
       {cells.map(cell => (

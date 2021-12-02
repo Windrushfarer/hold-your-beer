@@ -1,0 +1,43 @@
+.switcher {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  position: absolute;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	width: 1px;
+	border: 0;
+	overflow: hidden;
+  visibility: hidden;
+}
+
+.label {
+  font-size: 18px;
+  height: 46px;
+  width: 150px;
+  background: #FFFFFF;
+  border: 1px solid #DCDFF1;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.label:first-of-type {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.label:last-of-type {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.input:checked + .label {
+  background: #3457DC;
+  color: white;
+}

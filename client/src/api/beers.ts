@@ -14,6 +14,7 @@ function transformResponse(response: BeerResponse): BeerResponse {
       }
     }),
     count: response.count,
+    left: response.left,
   }
 }
 
