@@ -5,8 +5,19 @@
   "private": true,
   "main": "index.js",
   "scripts": {
+    "component:new": "yarn workspace beer-client run component:new",
     "dev": "concurrently \"yarn workspace beer-server run dev\" \"yarn workspace beer-client run dev\"",
-    "component:new": "yarn workspace beer-client run component:new"
+    "db:seed": "yarn workspace beer-server run seed",
+    "migrate:dev": "yarn workspace beer-server run migrate:dev",
+    "migrate:dev:create": "yarn workspace beer-server run migrate:dev:create",
+    "migrate:deploy": "yarn workspace beer-server run migrate:deploy",
+    "prisma:generate": "yarn workspace beer-server prisma:generate",
+    "prisma:generate:watch": "yarn workspace beer-server prisma:generate:watch",
+    "docker:migrate": "docker-compose -f docker-compose.migrate.yml up -d",
+    "docker:db": "docker-compose -f docker-compose.db.yml up -d",
+    "docker:seed": "docker exec -it api npm run seed",
+    "docker": "docker-compose up -d",
+    "docker:build": "docker-compose build"
   },
   "keywords": [],
   "author": "Windrushfarer",
